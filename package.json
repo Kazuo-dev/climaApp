@@ -34,5 +34,11 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "react-geocode": "^0.2.3",
+    "react-loader-spinner": "^5.1.0",
+    "react-simple-animate": "^3.3.12",
+    "sass": "^1.49.0"
   }
 }
