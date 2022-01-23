@@ -14,25 +14,25 @@ export const ImageSelector = ({state = state}) => {
   function renderSwitch() {
     switch (rute) {
       case 'Clouds':
-        return <img src={Cloud} />
+        return <img src={Cloud} alt='Cloud imagen'/>
       
       case 'Thunderstorm':
-        return <img src={Tstorm} />
+        return <img src={Tstorm} alt='storm imagen'/>
 
       case 'Drizzle':
-        return <img src={Flurries} />
+        return <img src={Flurries} alt='Flurries imagen'/>
       
       case 'Rain':
-        return <img src={Rain} />
+        return <img src={Rain} alt='Rain imagen'/>
             
       case 'Snow':
-        return <img src={Snow} />
+        return <img src={Snow} alt='Snow imagen'/>
 
       case 'Clear':
-        return <img src={Sunny} />
+        return <img src={Sunny} alt='Sunny imagen'/>
             
     default:
-      return <img src={Default} />
+      return <img src={Default} alt='Default imagen'/>
     }
   }
 
