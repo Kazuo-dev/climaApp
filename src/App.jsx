@@ -103,19 +103,19 @@ export default function App() {
             <div className='app-content__grid'>
               <div className='app-content__grid-wind'>
                 <h2> wind </h2>
-                <p> {Math.trunc(data.current.wind_speed * 3.6)} </p>
+                <p> {Math.trunc(data.current.wind_speed * 3.6)} km/h </p>
               </div>
               <div className='app-content__grid-humidity'>
                 <h2> humidity </h2>
-                <p> {JSON.stringify(data.current.humidity)} </p>
+                <p> {JSON.stringify(data.current.humidity)} %</p>
               </div>
               <div className='app-content__grid-pressure'>
               <h2> pressure </h2>
-              <p> {JSON.stringify(data.current.pressure)} </p>
+              <p> {JSON.stringify(data.current.pressure)} hpa </p>
               </div>
               <div className='app-content__grid-visibility'>
               <h2> visibility </h2>
-              <p> {JSON.stringify(data.current.visibility / 1000)} </p>
+              <p> {JSON.stringify(data.current.visibility / 1000)} KM </p>
               </div>
             </div>
           </section>
