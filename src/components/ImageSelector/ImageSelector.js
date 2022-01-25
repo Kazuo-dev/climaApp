@@ -1,14 +1,14 @@
 import React from 'react'
 
-import Cloud from '../../assets/images/climate-icons-white/cloudy.svg'
-import Default from '../../assets/images/climate-icons-white/unknown.svg'
-import Flurries from '../../assets/images/climate-icons-white/flurries.svg'
-import Rain from '../../assets/images/climate-icons-white/rain.svg'
-import Snow from '../../assets/images/climate-icons-white/snow.svg'
-import Sunny from '../../assets/images/climate-icons-white/sunny.svg'
-import Tstorm from '../../assets/images/climate-icons-white/tstorm.svg'
+import Cloud from '../../assets/images/climate-icons-white/cloudy.svg';
+import Default from '../../assets/images/climate-icons-white/unknown.svg';
+import Flurries from '../../assets/images/climate-icons-white/flurries.svg';
+import Rain from '../../assets/images/climate-icons-white/rain.svg';
+import Snow from '../../assets/images/climate-icons-white/snow.svg';
+import Sunny from '../../assets/images/climate-icons-white/sunny.svg';
+import Tstorm from '../../assets/images/climate-icons-white/tstorm.svg';
 
-export const ImageSelector = ({state = state}) => {
+export const ImageSelector = ({ state }) => {
   const rute = state.current.weather[0].main
 
   function renderSwitch() {

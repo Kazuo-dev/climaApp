@@ -54,7 +54,8 @@ export default function App() {
                 <input 
                  type="text" 
                  name="adress" 
-                 placeholder="Ciudad / País">
+                 placeholder="Ciudad / País"
+                 >
                 </input>
                 <button type="submit" 
                  onClick={setNewUrl}>
