@@ -63,14 +63,14 @@
           border-radius: .2rem;
           font-size: .8rem;
           height: 45%;
-          min-height: 30px;
+          min-height: 40px;
           width: 80%;
 
           &:-webkit-autofill {
             -webkit-box-shadow: 0 0 0 100px rgb(255, 255, 255, .3) inset;
             -moz-box-shadow: 0 0 0 100px rgb(255, 255, 255, .3) inset;
             box-shadow: 0 0 0 100px rgb(255, 255, 255, .3) inset;
-            -webkit-text-fill-color: rgb(255, 255, 255);
+            -webkit-text-fill-color: rgb(83, 83, 83);
           }
           
           &::placeholder {
