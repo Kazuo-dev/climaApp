@@ -86,8 +86,6 @@ export default function App() {
                 <img src={Github} alt="github" />
               </a>
             </div>
-
-            <div className="app-info__more">Más</div>
           </section>
 
           <section className="app-content">

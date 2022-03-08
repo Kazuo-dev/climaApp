@@ -247,24 +247,6 @@ body {
         }
       }
     }
-
-    &__more {
-      @include centerContent;
-      align-content: flex-end;
-      width: 100%;
-      font-size: 1.5rem;
-      color: white;
-      margin-top: 15px;
-
-      @media (max-width: 300px) {
-        height: 20px;
-        width: 50px;
-      }
-
-      @media (min-width: 700px) {
-        display: none;
-      }
-    }
   }
 
   &-content {
