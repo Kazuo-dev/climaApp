@@ -1,7 +1,6 @@
 import React from "react";
 import { ImageSelector } from "../ImageSelector/ImageSelector";
 
-import "./ClimateItem.scss";
 
 export const ClimateItem = ({ props, state }) => {
   const data = props;

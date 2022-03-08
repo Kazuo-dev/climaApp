@@ -1,0 +1,68 @@
+
+.climateitem {
+  height: 230px;
+  @include centerContent;
+
+  @media(max-width: 500px) {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  @media(max-width: 850px) {
+    height: 200px; 
+    max-height: 150px;
+  }
+
+  &-container {
+    @include centerContent;
+    background-color: rgba(131, 131, 131, 0.78);
+    flex-direction: column;
+    border-radius: 10px;
+    height: 100%;
+    width: 100%;
+    padding: 5px;
+    margin: 0 5px 0 5px;
+
+    @media(max-width : 500px) {   
+      height: 130px;
+    }
+
+    @media(min-width: 2000px) {   
+      height: 25vh
+    }
+
+    span {
+      color: white;
+      text-align: center;
+      font-size: 18px;
+
+      @media(max-width : 1000px) {   
+        font-size: 12px;
+      }
+
+      @media(min-width: 2000px) {   
+        @include rfs(2.8rem);
+      }
+    }
+    
+    img {
+      height: 70%;
+      width: 70%;
+      margin: 0 auto;
+    }
+    
+    p {
+      color: white;
+      text-align: center;
+      font-size: 14px;
+
+      @media(max-width: 400px) {   
+        font-size: 12px;
+      }
+
+      @media(min-width: 2000px) {   
+        @include rfs(2.5rem)
+      }
+    }
+  }   
+}

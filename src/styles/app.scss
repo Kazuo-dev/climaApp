@@ -1,0 +1,253 @@
+body {
+  background-color: rgb(116, 116, 116);
+}
+
+.app {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  overflow: hidden;
+
+  @media (max-width: 700px) {
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+  }
+
+  &-info {
+    margin-top: 7vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+
+    @media (max-width: 700px) {
+      @include centerContent;
+      flex-direction: column;
+      height: 100vh;
+    }
+
+    @media (min-width: 700px) {
+      margin-top: 0;
+    }
+
+    @media (max-height: 600px) {
+      margin-top: 15vh;
+    }
+
+    &__search {
+      height: 50px;
+      width: 100%;
+      @include centerContent;
+      position: fixed;
+      top: 0;
+      left: 0;
+
+      @media (min-width: 2000px) {
+        height: 10vh;
+      }
+
+      form {
+        @include centerContent;
+        height: 6vh;
+        width: 100%;
+
+        input {
+          background-color: rgb(228, 228, 228);
+          height: 25px;
+
+          @media (min-width: 700px) {
+            width: 20vw;
+          }
+
+          @media (min-width: 2000px) {
+            height: 50%;
+            width: 20vw;
+            @include rfs(2rem);
+          }
+        }
+
+        button {
+          background: transparent;
+          border: none;
+          height: 10px;
+          @include centerContent;
+          height: 50px;
+          width: 60px;
+
+          @media (min-width: 2000px) {
+            height: 3vw;
+            width: 3vw;
+          }
+
+          img {
+            height: 100%;
+            width: 100%;
+          }
+        }
+      }
+    }
+
+    &__card {
+      @include centerContent;
+      background-color: rgb(0, 0, 0, 0.3);
+      border-radius: 10px;
+      flex-direction: column;
+      height: 500px;
+      width: 80%;
+      padding: 10px;
+      max-width: 350px;
+      margin: 0 auto;
+
+      @media (min-width: 2000px) {
+        height: 30vw;
+        width: 15vw;
+        max-width: none;
+      }
+
+      img {
+        height: 100%;
+        width: 80%;
+
+        @media (min-width: 2000px) {
+          margin-top: 0;
+          height: 100%;
+          width: 100%;
+        }
+      }
+
+      &-info {
+        @include centerContent;
+        justify-content: flex-end;
+        flex-direction: column;
+        height: 100%;
+        width: 100%;
+
+        p {
+          color: white;
+          height: fit-content;
+          @include rfs(1.1rem);
+
+          @media (min-width: 2000px) {
+            @include rfs(3rem);
+          }
+        }
+      }
+    }
+
+    &__rrss {
+      display: flex;
+      position: absolute;
+      justify-content: center;
+      bottom: 0;
+      height: 10vh;
+      width: 50%;
+
+      @media (min-width: 2000px) {
+        background-color: red;
+      }
+
+      a {
+        @include centerContent;
+        height: 100%;
+        width: fit-content;
+      }
+
+      img {
+        height: 30px;
+        width: 30px;
+
+        @media (max-width: 700px) {
+          margin-bottom: 20vh;
+        }
+
+        @media (max-height: 600px) {
+          margin-bottom: 5vh;
+        }
+
+        @media (max-height: 600px) {
+          height: 20px;
+          width: 20px;
+          margin-top: 5vh;
+        }
+
+        @media (min-width: 2000px) {
+          height: 2vw;
+          width: 2vw;
+        }
+      }
+    }
+
+    &__more {
+      @include centerContent;
+      align-content: flex-end;
+      width: fit-content;
+      font-size: 1.5rem;
+      margin-top: 40%;
+      color: white;
+
+      @media (min-width: 700px) {
+        display: none;
+      }
+    }
+  }
+
+  &-content {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-evenly;
+    flex-direction: column;
+
+    @media (min-width: 2000px) {
+      height: 90vh;
+      margin-top: 10vh;
+    }
+
+    &__days {
+      @include centerContent;
+      width: 100%;
+      height: 300px;
+    }
+
+    &__today {
+      text-align: center;
+      background-color: rebeccapurple;
+      color: white;
+      font-size: 1.5rem;
+      width: 100%;
+      height: fit-content;
+
+      @media (min-width: 2000px) {
+        @include rfs(3.5rem);
+      }
+    }
+
+    &__grid {
+      display: grid;
+      padding: 5px;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      width: 50vw;
+
+      @media (max-width: 700px) {
+        width: 90vw;
+      }
+
+      &-wind,
+      &-humidity,
+      &-pressure,
+      &-visibility {
+        @include centerContent;
+        flex-direction: column;
+        width: 100%;
+        height: 100px;
+
+        @media (min-width: 2000px) {
+          height: 10vw;
+          @include rfs(2.5rem);
+        }
+      }
+    }
+  }
+}

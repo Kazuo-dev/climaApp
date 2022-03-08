@@ -39,6 +39,7 @@
     "react-geocode": "^0.2.3",
     "react-loader-spinner": "^5.1.4",
     "react-simple-animate": "^3.3.12",
-    "sass": "^1.49.8"
+    "rfs": "^9.0.6",
+    "sass": "^1.49.9"
   }
 }

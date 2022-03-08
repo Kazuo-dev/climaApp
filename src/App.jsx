@@ -8,8 +8,6 @@ import { Loading } from "./components/Loading/Loading";
 import SearchIcon from "./assets/images/various/search-grey.png";
 import Github from "./assets/images/various/github.png";
 
-import "./App.scss";
-
 Geocode.setApiKey(process.env.REACT_APP_GEOCODE_KEY);
 Geocode.setLanguage("es");
 
@@ -48,39 +46,37 @@ export default function App() {
         </Animate>
       ) : data.current ? (
         <>
-          <section className="app-sider">
-            <div className="app-sider__search">
-              <form className="app-sider__search-form" ref={form}>
+          <section className="app-info">
+            <div className="app-info__search">
+              <form ref={form}>
                 <input
                   type="text"
                   name="adress"
-                  placeholder="Ciudad / País"
+                  placeholder="Search a city"
                 ></input>
                 <button type="submit" onClick={setNewUrl}>
-                  <img src={SearchIcon} alt="search icon" />
+                  <img src={SearchIcon} alt="Buscar" />
                 </button>
               </form>
             </div>
 
             <Animate play start={{ opacity: 0 }} end={{ opacity: 1 }}>
-              <div className="app-sider__img">
+              <div className="app-info__card">
                 <ImageSelector state={data} />
+                <div className="app-info__card-info">
+                  <p> {Math.trunc(JSON.stringify(data.current.temp))} C° </p>
+                  <p id="city-name"> {city} </p>
+                  <p>
+                    {" "}
+                    {JSON.stringify(
+                      data.current.weather[0].description
+                    ).replace(/['"]+/g, "")}{" "}
+                  </p>
+                </div>
               </div>
             </Animate>
 
-            <div className="app-sider__info">
-              <p> {Math.trunc(JSON.stringify(data.current.temp))} C°</p>
-              <p id="city-name"> {city} </p>
-              <p>
-                {" "}
-                {JSON.stringify(data.current.weather[0].description).replace(
-                  /['"]+/g,
-                  ""
-                )}{" "}
-              </p>
-            </div>
-
-            <div className="app-sider__rrss">
+            <div className="app-info__rrss">
               <a
                 href="https://github.com/Kazuo-dev/Climates"
                 rel="noreferrer noopener"
@@ -89,6 +85,8 @@ export default function App() {
                 <img src={Github} alt="github" />
               </a>
             </div>
+
+            <div className="app-info__more">Más</div>
           </section>
 
           <section className="app-content">
