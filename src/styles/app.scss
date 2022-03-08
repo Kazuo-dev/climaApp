@@ -230,6 +230,10 @@ body {
       height: 40px;
       width: 40%;
       margin-bottom: 2vh;
+      
+      @media (max-height: 400px) {
+        display: none;
+      }
 
       a {
         @include centerContent;
