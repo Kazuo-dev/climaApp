@@ -138,11 +138,6 @@ body {
       max-width: 350px;
       margin: 0 auto;
 
-      @media (max-width: 400px) {
-        height: 400px;
-        width: 250px;
-      }
-
       @media (min-width: 2000px) {
         height: 24vw;
         width: 15vw;
@@ -152,6 +147,11 @@ body {
       @media (max-height: 730px) {
         height: 400px;
         width: 250px;
+      }
+
+      @media (max-width: 400px) {
+        height: 350px;
+        width: 180px;
       }
 
 
