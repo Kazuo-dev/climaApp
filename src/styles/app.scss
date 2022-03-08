@@ -1,10 +1,25 @@
 body {
-  background-color: rgb(116, 116, 116);
+  &:before {
+    content: "";
+    background: url('../assets/images/bg.webp');
+    background-position: center;
+    background-size: cover;
+    filter: brightness(30%);
+    background-position-y: 55%;
+    height: 100vh;
+    left: 0;
+    position: fixed;
+    overflow: hidden;
+    top: 0;
+    width: 100vw;
+    will-change: transform; 
+    z-index: -3;
+  }
 }
 
 .app {
   display: grid;
-  grid-template-columns: 50% 50%;
+  grid-template-columns: 40% 60%;
   overflow: hidden;
 
   @media (max-width: 700px) {
@@ -14,11 +29,11 @@ body {
   }
 
   &-info {
-    margin-top: 7vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     width: 100%;
+    margin-bottom: 15vh;
 
     @media (max-width: 700px) {
       @include centerContent;
@@ -26,23 +41,15 @@ body {
       height: 100vh;
     }
 
-    @media (min-width: 700px) {
-      margin-top: 0;
-    }
-
-    @media (max-height: 600px) {
-      margin-top: 15vh;
-    }
-
     &__search {
-      height: 50px;
       width: 100%;
       @include centerContent;
       position: fixed;
       top: 0;
       left: 0;
+      height: 7vh;
 
-      @media (min-width: 2000px) {
+      @media (max-width: 700px) {
         height: 10vh;
       }
 
@@ -52,31 +59,64 @@ body {
         width: 100%;
 
         input {
-          background-color: rgb(228, 228, 228);
-          height: 25px;
+          height: 20px;
+          background-color: rgb(15, 15, 15, .2);
+          border: none;
+          color: white;
+          padding: 5px;
+          @include rfs(.8rem);
+          transition: .3s ease-in-out;
 
           @media (min-width: 700px) {
             width: 20vw;
           }
 
-          @media (min-width: 2000px) {
+          @media (min-width: 2500px) {
             height: 50%;
             width: 20vw;
             @include rfs(2rem);
           }
+
+          @media (max-width: 400px) {
+            font-size: 14px;
+            margin-top: 1%;
+          }
+
+          &::placeholder {
+            color: white;
+          }
+
+          &:focus {
+            outline: rgba(255, 255, 255, 0.8);
+            background-color: rgba(150, 150, 150, 0.2);
+          }
         }
 
         button {
-          background: transparent;
+          background-color: rgba(150, 150, 150, 0.2);
           border: none;
           height: 10px;
           @include centerContent;
-          height: 50px;
-          width: 60px;
+          height: 30px;
+          width: 40px;
+          transition: .3s ease-in-out;
+
+          @media (max-width: 700px) {
+            background-color: transparent;
+          }
 
           @media (min-width: 2000px) {
-            height: 3vw;
-            width: 3vw;
+            height: 1.5vw;
+            width: 2vw;
+          }
+          
+          &:hover {
+            cursor: pointer;
+            background-color: rgba(80, 80, 80, 0.2);
+
+            @media (max-width: 700px) {
+              background-color: transparent;
+            }
           }
 
           img {
@@ -89,29 +129,40 @@ body {
 
     &__card {
       @include centerContent;
-      background-color: rgb(0, 0, 0, 0.3);
-      border-radius: 10px;
+      background-color: rgb(0, 0, 0, 0.1);
+      border-radius: 40px;
       flex-direction: column;
-      height: 500px;
+      height: 600px;
       width: 80%;
       padding: 10px;
       max-width: 350px;
       margin: 0 auto;
 
+      @media (max-width: 400px) {
+        height: 400px;
+        width: 250px;
+      }
+
       @media (min-width: 2000px) {
-        height: 30vw;
+        height: 24vw;
         width: 15vw;
         max-width: none;
       }
+
+      @media (max-height: 730px) {
+        height: 400px;
+        width: 250px;
+      }
+
 
       img {
         height: 100%;
         width: 80%;
 
-        @media (min-width: 2000px) {
+        @media (min-width: 2500px) {
           margin-top: 0;
-          height: 100%;
-          width: 100%;
+          height: 80%;
+          width: 80%;
         }
       }
 
@@ -121,16 +172,49 @@ body {
         flex-direction: column;
         height: 100%;
         width: 100%;
+        color: white;
 
-        p {
-          color: white;
-          height: fit-content;
-          @include rfs(1.1rem);
+        &__c {
+          @include rfs(3.5rem);
 
-          @media (min-width: 2000px) {
-            @include rfs(3rem);
+          @media (max-height: 700px) {
+            @include rfs(2rem);
+          }
+
+          @media (min-width: 2500px) {
+            @include rfs(4rem);
           }
         }
+
+        &__city {
+          @include rfs(1.3rem);
+          letter-spacing: .3rem;
+
+          @media (max-height: 700px) {
+            @include rfs(1rem);
+          }
+
+          @media (min-width: 2500px) {
+            @include rfs(2rem);
+          }
+        }
+
+        &__description {
+          @include rfs(1rem);
+
+          @media (max-height: 700px) {
+            @include rfs(1rem);
+          }
+
+          @media (min-width: 2500px) {
+            @include rfs(1.5rem);
+          }
+        }
+
+        p {
+          height: fit-content;
+        }
+      
       }
     }
 
@@ -139,40 +223,27 @@ body {
       position: absolute;
       justify-content: center;
       bottom: 0;
-      height: 10vh;
-      width: 50%;
-
-      @media (min-width: 2000px) {
-        background-color: red;
-      }
+      height: 40px;
+      width: 40%;
+      margin-bottom: 2vh;
 
       a {
         @include centerContent;
-        height: 100%;
-        width: fit-content;
       }
 
       img {
-        height: 30px;
-        width: 30px;
-
-        @media (max-width: 700px) {
-          margin-bottom: 20vh;
-        }
-
-        @media (max-height: 600px) {
-          margin-bottom: 5vh;
-        }
+        height: 25px;
+        width: 25px;
 
         @media (max-height: 600px) {
           height: 20px;
           width: 20px;
-          margin-top: 5vh;
         }
 
-        @media (min-width: 2000px) {
-          height: 2vw;
-          width: 2vw;
+        @media (min-width: 2500px) {
+          height: 1vw;
+          width: 1vw;
+          margin-bottom: 2vw;
         }
       }
     }
@@ -180,10 +251,15 @@ body {
     &__more {
       @include centerContent;
       align-content: flex-end;
-      width: fit-content;
+      width: 100%;
       font-size: 1.5rem;
-      margin-top: 40%;
       color: white;
+      margin-top: 15px;
+
+      @media (max-width: 300px) {
+        height: 20px;
+        width: 50px;
+      }
 
       @media (min-width: 700px) {
         display: none;
@@ -192,6 +268,7 @@ body {
   }
 
   &-content {
+    background-color: rgb(31, 31, 31);
     height: 100vh;
     display: flex;
     align-items: center;
@@ -199,36 +276,41 @@ body {
     justify-content: space-evenly;
     flex-direction: column;
 
-    @media (min-width: 2000px) {
+    @media (min-width: 2500px) {
       height: 90vh;
-      margin-top: 10vh;
     }
 
     &__days {
       @include centerContent;
       width: 100%;
       height: 300px;
+
+      @media (min-width: 2500px) {
+        margin-top: 15vh;
+      }
     }
 
     &__today {
       text-align: center;
-      background-color: rebeccapurple;
       color: white;
-      font-size: 1.5rem;
+      @include rfs(2rem);
       width: 100%;
       height: fit-content;
 
-      @media (min-width: 2000px) {
-        @include rfs(3.5rem);
+      @media (min-width: 2500px) {
+        @include rfs(2.5rem);
+        margin-top: 4vw;
       }
     }
 
     &__grid {
       display: grid;
+      grid-gap: 5px;
       padding: 5px;
+      color: white;
       grid-template-columns: 1fr 1fr;
       grid-template-rows: 1fr 1fr;
-      width: 50vw;
+      width: 40vw;
 
       @media (max-width: 700px) {
         width: 90vw;
@@ -238,14 +320,30 @@ body {
       &-humidity,
       &-pressure,
       &-visibility {
+        align-self: center;
+        justify-self: center;
         @include centerContent;
         flex-direction: column;
-        width: 100%;
-        height: 100px;
+        background-color: rgb(15, 15, 15, .2);
+        border-radius: 25px;
+        width: 60%;
+        margin: 10px 0 10px 0;
+        height: 150px;
+        @include rfs(.9rem);
 
-        @media (min-width: 2000px) {
-          height: 10vw;
-          @include rfs(2.5rem);
+        @media (min-width: 2500px) {
+          height: 7vw;
+          @include rfs(1.7rem);
+        }
+
+        @media (max-width: 500px) {
+          min-width: 100px;
+          height: 100px;
+          @include rfs(.5rem);
+        }
+
+        @media (max-width: 300px) {
+          font-size: 10px;
         }
       }
     }

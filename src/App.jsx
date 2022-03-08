@@ -52,7 +52,8 @@ export default function App() {
                 <input
                   type="text"
                   name="adress"
-                  placeholder="Search a city"
+                  placeholder="Busca una ciudad"
+                  autoComplete="off"
                 ></input>
                 <button type="submit" onClick={setNewUrl}>
                   <img src={SearchIcon} alt="Buscar" />
@@ -64,9 +65,9 @@ export default function App() {
               <div className="app-info__card">
                 <ImageSelector state={data} />
                 <div className="app-info__card-info">
-                  <p> {Math.trunc(JSON.stringify(data.current.temp))} C° </p>
-                  <p id="city-name"> {city} </p>
-                  <p>
+                  <p className="app-info__card-info__c"> {Math.trunc(JSON.stringify(data.current.temp))} C° </p>
+                  <p className="app-info__card-info__city" id="city-name"> {city.toLocaleUpperCase()} </p>
+                  <p className="app-info__card-info__description">
                     {" "}
                     {JSON.stringify(
                       data.current.weather[0].description
