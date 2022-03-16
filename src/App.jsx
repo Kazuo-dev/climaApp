@@ -65,8 +65,14 @@ export default function App() {
               <div className="app-info__card">
                 <ImageSelector state={data} />
                 <div className="app-info__card-info">
-                  <p className="app-info__card-info__c"> {Math.trunc(JSON.stringify(data.current.temp))} C° </p>
-                  <p className="app-info__card-info__city" id="city-name"> {city.toLocaleUpperCase()} </p>
+                  <p className="app-info__card-info__c">
+                    {" "}
+                    {Math.trunc(JSON.stringify(data.current.temp))} C°{" "}
+                  </p>
+                  <p className="app-info__card-info__city" id="city-name">
+                    {" "}
+                    {city.toLocaleUpperCase()}{" "}
+                  </p>
                   <p className="app-info__card-info__description">
                     {" "}
                     {JSON.stringify(
