@@ -1,0 +1,27 @@
+@import "./base/_settings.scss";
+@import "./base/_normalize.scss";
+@import "/src/App.scss";
+
+html {
+  font-family: "Lato", sans-serif;
+  font-weight: 300;
+}
+
+body {
+  &:before {
+    content: "";
+    background: url("../assets/images/bg.webp");
+    background-position: center;
+    background-size: cover;
+    filter: brightness(30%);
+    background-position-y: 55%;
+    height: 100vh;
+    left: 0;
+    position: fixed;
+    overflow: hidden;
+    top: 0;
+    width: 100vw;
+    will-change: transform;
+    z-index: -3;
+  }
+}

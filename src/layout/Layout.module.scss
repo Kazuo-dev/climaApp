@@ -1,0 +1,38 @@
+.layout {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+
+  &_main {
+    margin-top: 80px;
+    display: flex;
+    flex-direction: column;
+    background-color: aqua;
+    height: fit-content;
+    width: 100%;
+
+    @media screen and (min-width: 768px) {
+      display: grid;
+      grid-template-columns: 65% auto;
+    }
+
+    &_section1 {
+      height: 80vh;
+      width: 100%;
+      background-color: green;
+    }
+
+    &_section2 {
+      height: 80vh;
+      width: 100%;
+      background-color: purple;
+    }
+  }
+
+  footer {
+    background-color: red;
+    height: 10vh;
+    width: 100vw;
+    z-index: 2;
+  }
+}
